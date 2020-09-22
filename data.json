@@ -1,0 +1,105 @@
+{
+    "restaurants": [
+        {
+            "id": 1,
+            "img": "https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=joseph-gonzalez-zcUgjyqEwe8-unsplash.jpg&w=640",
+            "name": "Ristorante Rustico",
+            "description": "50.00 kr Fee . 35 - 45 min. $$",
+            "popularity": 4125,
+            "rating": 3,
+            "maxDeliveryTime": 45,
+            "menu": [
+                {
+                    "category": "antipasta",
+                    "items": [
+                        {
+                            "typeOfMeal": "vegan",
+                            "label": "Bruschetta e Caprese",
+                            "description": "Vitlöksrostat lantbröd toppat med napolitansk buffelmozzarella och tomatsallad gjord på vilda piccadilly tomater.",
+                            "price": 110
+                        },
+                        {
+                            "typeOfMeal": "non vegan",
+                            "label": "Tartare Di Salmone",
+                            "description": "Laxtartar, forellrom, gurka, rökt färskost, örtolja och lantbrödskrisp.",
+                            "price": 235
+                        }
+                    ]
+                },
+                {
+                    "category": "Le Pizze",
+                    "items": [
+                        {
+                            "typeOfMeal": "vegan",
+                            "label": "Margherita",
+                            "description": "Tomatsås, mozzarellaost och basilika",
+                            "price": 119
+                        },
+                        {
+                            "typeOfMeal": "non vegan",
+                            "label": "Calabrese Diavolo",
+                            "description": "Tomatsås, mozzarellaost, nduja salami, salami spianata, oliver, chili och rödlök",
+                            "price": 165
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "img": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=eiliv-sonas-aceron-ZuIDLSz3XLg-unsplash.jpg&w=640",
+            "name": "Vigårda MOS",
+            "description": "25.00 kr Fee . 10 - 13 min. $$$ - Vi använder drönare 😘 😘",
+            "popularity": 4115,
+            "rating": 4,
+            "maxDeliveryTime": 13,
+            "menu": [
+                {
+                    "category": "vigårdaburgare",
+                    "items": [
+                        {
+                            "typeOfMeal": "vegan",
+                            "label": "Örtagård/Halloumi",
+                            "description": "Grillade grönsaker, wegme, citron och chili",
+                            "price": 98
+                        },
+                        {
+                            "typeOfMeal": "vegan",
+                            "label": "Vegan",
+                            "description": "Lins eller bönburgare, avokado, kålslaw, tomat och chili",
+                            "price": 95
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "img": "https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=lidye-1Shk_PkNkNw-unsplash.jpg&w=640",
+            "name": "Zaiqas Specialrätter",
+            "description": "20.00 kr Fee . 15 - 25 min. $$",
+            "popularity": 2125,
+            "rating": 3.5,
+            "maxDeliveryTime": 25,
+            "menu": [
+                {
+                    "category": "kyclingrätter",
+                    "items": [
+                        {
+                            "typeOfMeal": "non vegan",
+                            "label": "Chicken Tikka Masala",
+                            "description": "Grillade grönsaker, wegme, citron och chili",
+                            "price": 185
+                        },
+                        {
+                            "typeOfMeal": "non vegan",
+                            "label": "Garlic Chicken Tikka Masala",
+                            "description": "Grillad farlic marinerad kyclingfilé med en mild traiditionell tomatsås och cashewnötter",
+                            "price": 190
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

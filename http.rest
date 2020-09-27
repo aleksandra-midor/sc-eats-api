@@ -1,0 +1,20 @@
+POST http://localhost:4000/api/v1/login
+Content-Type: application/json
+
+{
+    "username": "Mark",
+    "password": "january"
+}
+
+###
+GET http://localhost:4000/api/v1/restaurants
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiTWFyayIsImVtYWlsIjoibWFya0BnbWFpbC5jb20iLCJwYXNzd29yZCI6ImphbnVhcnkifSwiaWF0IjoxNjAxMjAzOTMzfQ.J5ZFWYU03sJHiSyoDhocUy12ThrQtPt3hU2dqIVhgy0
+
+###
+POST http://localhost:4000/api/v1/restaurants
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiTWFyayIsImVtYWlsIjoibWFya0BnbWFpbC5jb20iLCJwYXNzd29yZCI6ImphbnVhcnkifSwiaWF0IjoxNjAxMjAzOTMzfQ.J5ZFWYU03sJHiSyoDhocUy12ThrQtPt3hU2dqIVhgy0
+
+{
+  "name": "Test Restaurant",
+}

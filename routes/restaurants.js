@@ -4,7 +4,6 @@ const fs = require("fs");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
 
-// console.log(users)
 
 function verifyToken(req, res, next) {
   const bearerHeader = req.headers["authorization"];
@@ -17,89 +16,97 @@ function verifyToken(req, res, next) {
   }
 }
 
-// // get
-// router.get("/", verifyToken, (req, res) => {
-//   jwt.verify(req.token, "secretkey", (err, authDate) => {
-//     if (err) {
-//       res.sendStatus(403); //forbidden
-//     } else {
-//       return res.json(data);
-//     }
-//   });
-// });
+// get all restaurants
+router.get("/", verifyToken, (req, res) => {
+  jwt.verify(req.token, "secretkey", (err, authDate) => {
+    if (err) {
+      res.sendStatus(403); //forbidden
+    } else {
+      Restaurant.find()
+        .then((data) => {
+          res.json(data);
+        })
+        .catch((err) => {
+          res.json({ message: err });
+        });
+    }
+  });
+});
 
-// add
+// add a restaurant
 router.post("/", verifyToken, (req, res) => {
   jwt.verify(req.token, "secretkey", (err, authDate) => {
     if (err) {
       res.sendStatus(403); //forbidden
     } else {
-        const restaurant = new Restaurant({
-          name: req.body.name,
-          description: req.body.description,
+      const restaurant = new Restaurant({
+        name: req.body.name,
+        description: req.body.description,
+      });
+      restaurant
+        .save()
+        .then((data) => {
+          res.json(data);
+        })
+        .catch((err) => {
+          res.json({ message: err });
         });
-        restaurant.save()
-        .then(data => {
-          res.json(data)
-        })
-        .catch(err => {
-          res.json({ message: err})
-        })
-      }
-    });
+    }
+  });
 });
 
-// // change
-// router.put("/", verifyToken, (req, res) => {
-//   jwt.verify(req.token, "secretkey", (err, authDate) => {
-//     if (err) {
-//       res.sendStatus(403); //forbidden
-//     } else {
-//       const body = req.body;
-//       const index = data.restaurants.findIndex(
-//         (aRestaurant) => aRestaurant.id === +body.id
-//       );
-//       if (index > -1) {
-//         data.restaurants.splice(index, 1);
-//         data.restaurants.push(body);
-//       }
+// get restaurant by a parameter
+router.get("/:restaurantId", verifyToken, (req, res) => {
+  jwt.verify(req.token, "secretkey", (err, authDate) => {
+    if (err) {
+      res.sendStatus(403); //forbidden
+    } else {
+      Restaurant.findById(req.params.restaurantId)
+        .then((data) => {
+          res.json(data);
+        })
+        .catch((err) => {
+          res.json({ message: err });
+        });
+    }
+  });
+});
 
-//       fs.writeFileSync("./data-test.json", JSON.stringify(data, null, 2));
-//       return res.json(data);
-//     }
-//   });
-// });
+// delete restaurant by id
+router.delete("/:restaurantId", verifyToken, (req, res) => {
+  jwt.verify(req.token, "secretkey", (err, authDate) => {
+    if (err) {
+      res.sendStatus(403); //forbidden
+    } else {
+      Restaurant.remove({ _id: req.params.restaurantId })
+        .then((data) => {
+          res.json(data);
+        })
+        .catch((err) => {
+          res.json({ message: err });
+        });
+    }
+  });
+});
 
-// // getting element by a parameter
-// router.get("/:restaurantId", verifyToken, (req, res) => {
-//   jwt.verify(req.token, "secretkey", (err, authDate) => {
-//     if (err) {
-//       res.sendStatus(403); //forbidden
-//     } else {
-//       const restaurantId = req.params.restaurantId;
-//       const restaurant = data.restaurants.find(
-//         (aRestaurant) => aRestaurant.id === +restaurantId
-//       );
-//       return res.json(restaurant);
-//     }
-//   });
-// });
-
-// // deleting element by a parameter
-// router.delete("/:restaurantId", verifyToken, (req, res) => {
-//   jwt.verify(req.token, "secretkey", (err, authDate) => {
-//     if (err) {
-//       res.sendStatus(403); //forbidden
-//     } else {
-//       const restaurantId = req.params.restaurantId;
-//       const restaurant = data.restaurants.filter(
-//         (aRestaurant) => aRestaurant.id !== +restaurantId
-//       );
-
-//       fs.writeFileSync("./data-test.json", JSON.stringify(restaurant, null, 2));
-//       return res.json(restaurant);
-//     }
-//   });
-// });
+// change restaurant by id
+router.patch("/:restaurantId", verifyToken, (req, res) => {
+  jwt.verify(req.token, "secretkey", (err, authDate) => {
+    if (err) {
+      res.sendStatus(403); //forbidden
+    } else {
+      Restaurant.updateOne(
+        { _id: req.params.restaurantId },
+        { $set: { name: req.body.name } }
+      )
+        .then((data) => {
+          res.json(data);
+        })
+        .catch((err) => {
+          res.json({ message: err });
+        });
+    }
+  });
+});
 
 module.exports = router;

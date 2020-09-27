@@ -2,20 +2,39 @@ POST http://localhost:4000/api/v1/login
 Content-Type: application/json
 
 {
-    "username": "Mark",
-    "password": "january"
+    "username": "Tom",
+    "password": "december"
 }
 
 ###
 GET http://localhost:4000/api/v1/restaurants
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiTWFyayIsImVtYWlsIjoibWFya0BnbWFpbC5jb20iLCJwYXNzd29yZCI6ImphbnVhcnkifSwiaWF0IjoxNjAxMjMxNDI5fQ.pGam5DcE6btLtgkr8KDgLd_NMWg3G84CuxJEAungoxI
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiVG9tIiwiZW1haWwiOiJ0b21AZ21haWwuY29tIiwicGFzc3dvcmQiOiJkZWNlbWJlciJ9LCJpYXQiOjE2MDEyNDAxNjR9.YshlcjnUgrPaMqDVP40RZ5lZ68qu68e99je666Wgy10
 
 ###
 POST http://localhost:4000/api/v1/restaurants
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiTWFyayIsImVtYWlsIjoibWFya0BnbWFpbC5jb20iLCJwYXNzd29yZCI6ImphbnVhcnkifSwiaWF0IjoxNjAxMjMxNDI5fQ.pGam5DcE6btLtgkr8KDgLd_NMWg3G84CuxJEAungoxI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiVG9tIiwiZW1haWwiOiJ0b21AZ21haWwuY29tIiwicGFzc3dvcmQiOiJkZWNlbWJlciJ9LCJpYXQiOjE2MDEyNDAxNjR9.YshlcjnUgrPaMqDVP40RZ5lZ68qu68e99je666Wgy10
 
 {
-  "name": "next restaurant",
+  "name": "old restaurant",
   "description": "very tasty food"
+}
+
+###
+GET http://localhost:4000/api/v1/restaurants/5f70eb874d1c96841436094c
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiVG9tIiwiZW1haWwiOiJ0b21AZ21haWwuY29tIiwicGFzc3dvcmQiOiJkZWNlbWJlciJ9LCJpYXQiOjE2MDEyNDAxNjR9.YshlcjnUgrPaMqDVP40RZ5lZ68qu68e99je666Wgy10
+
+
+###
+DELETE http://localhost:4000/api/v1/restaurants/5f70eb874d1c96841436094c
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiVG9tIiwiZW1haWwiOiJ0b21AZ21haWwuY29tIiwicGFzc3dvcmQiOiJkZWNlbWJlciJ9LCJpYXQiOjE2MDEyNDAxNjR9.YshlcjnUgrPaMqDVP40RZ5lZ68qu68e99je666Wgy10
+
+###
+
+PATCH http://localhost:4000/api/v1/restaurants/5f70fc9931379731c8e9e467
+Content-Type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiVG9tIiwiZW1haWwiOiJ0b21AZ21haWwuY29tIiwicGFzc3dvcmQiOiJkZWNlbWJlciJ9LCJpYXQiOjE2MDEyNDAxNjR9.YshlcjnUgrPaMqDVP40RZ5lZ68qu68e99je666Wgy10
+
+{
+  "name": "new restaurant"
 }

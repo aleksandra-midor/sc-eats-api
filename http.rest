@@ -8,13 +8,14 @@ Content-Type: application/json
 
 ###
 GET http://localhost:4000/api/v1/restaurants
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiTWFyayIsImVtYWlsIjoibWFya0BnbWFpbC5jb20iLCJwYXNzd29yZCI6ImphbnVhcnkifSwiaWF0IjoxNjAxMjAzOTMzfQ.J5ZFWYU03sJHiSyoDhocUy12ThrQtPt3hU2dqIVhgy0
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiTWFyayIsImVtYWlsIjoibWFya0BnbWFpbC5jb20iLCJwYXNzd29yZCI6ImphbnVhcnkifSwiaWF0IjoxNjAxMjMxNDI5fQ.pGam5DcE6btLtgkr8KDgLd_NMWg3G84CuxJEAungoxI
 
 ###
 POST http://localhost:4000/api/v1/restaurants
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiTWFyayIsImVtYWlsIjoibWFya0BnbWFpbC5jb20iLCJwYXNzd29yZCI6ImphbnVhcnkifSwiaWF0IjoxNjAxMjAzOTMzfQ.J5ZFWYU03sJHiSyoDhocUy12ThrQtPt3hU2dqIVhgy0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiTWFyayIsImVtYWlsIjoibWFya0BnbWFpbC5jb20iLCJwYXNzd29yZCI6ImphbnVhcnkifSwiaWF0IjoxNjAxMjMxNDI5fQ.pGam5DcE6btLtgkr8KDgLd_NMWg3G84CuxJEAungoxI
 
 {
-  "name": "Test Restaurant",
+  "name": "next restaurant",
+  "description": "very tasty food"
 }

@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
+require('dotenv/config')
 const dbNames = {
   production: 'sceats',
   test: 'test-sceats',
   development: 'dev-sceats'
 }
 const connect = () => {
-  // replace with your own or MongoCloud string
-  const mongoConnectionString = `mongodb://localhost/${dbNames[process.env.NODE_ENV]}`;
+  const mongoConnectionString = process.env.DB_CONNECTION
   const opts = {
     useNewUrlParser: true,
     useUnifiedTopology: true,

@@ -6,11 +6,11 @@ Content-Type: application/json
     "password": "december"
 }
 
-###
+### get all restaurants
 GET http://localhost:4000/api/v1/restaurants
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiVG9tIiwiZW1haWwiOiJ0b21AZ21haWwuY29tIiwicGFzc3dvcmQiOiJkZWNlbWJlciJ9LCJpYXQiOjE2MDEyNDAxNjR9.YshlcjnUgrPaMqDVP40RZ5lZ68qu68e99je666Wgy10
 
-###
+### add a restaurant
 POST http://localhost:4000/api/v1/restaurants
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiVG9tIiwiZW1haWwiOiJ0b21AZ21haWwuY29tIiwicGFzc3dvcmQiOiJkZWNlbWJlciJ9LCJpYXQiOjE2MDEyNDAxNjR9.YshlcjnUgrPaMqDVP40RZ5lZ68qu68e99je666Wgy10
@@ -20,16 +20,16 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuY
   "description": "very tasty food"
 }
 
-###
-GET http://localhost:4000/api/v1/restaurants/5f7328feea87634bd4d610b5
+### get restaurant by a parameter
+GET http://localhost:4000/api/v1/restaurants/5f70fc9931379731c8e9e467
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiVG9tIiwiZW1haWwiOiJ0b21AZ21haWwuY29tIiwicGFzc3dvcmQiOiJkZWNlbWJlciJ9LCJpYXQiOjE2MDEyNDAxNjR9.YshlcjnUgrPaMqDVP40RZ5lZ68qu68e99je666Wgy10
 
 
-###
-DELETE http://localhost:4000/api/v1/restaurants/5f7328feea87634bd4d610b5
+### delete restaurant by id
+DELETE http://localhost:4000/api/v1/restaurants/5f70fc9931379731c8e9e467
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiVG9tIiwiZW1haWwiOiJ0b21AZ21haWwuY29tIiwicGFzc3dvcmQiOiJkZWNlbWJlciJ9LCJpYXQiOjE2MDEyNDAxNjR9.YshlcjnUgrPaMqDVP40RZ5lZ68qu68e99je666Wgy10
 
-###
+### change restaurant by id
 
 PATCH http://localhost:4000/api/v1/restaurants/5f73214b15147a6a88036540
 Content-Type: application/json

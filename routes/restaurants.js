@@ -9,101 +9,75 @@ function verifyToken(req, res, next) {
   if (typeof bearerHeader !== "undefined") {
     const bearerToken = bearerHeader.split(" ")[1];
     req.token = bearerToken;
-    next();
+
+    jwt.verify(req.token, "secretkey", (err) => {
+      if (err) {
+        res.sendStatus(403); //forbidden
+      } else {
+        next();
+      }
+    });
   } else {
     res.sendStatus(403);
   }
 }
 
-// get all restaurants
-router.get("/", verifyToken, (req, res) => {
-  jwt.verify(req.token, "secretkey", async (err, authDate) => {
-    if (err) {
-      res.sendStatus(403); //forbidden
-    } else {
-      try {
-        const allRestaurants = await Restaurant.find();
-        res.json(allRestaurants);
-      } catch (error) {
-        res.json({ message: error });
-      }
-    }
-  });
+router.get("/", verifyToken, async (req, res) => {
+  try {
+    const allRestaurants = await Restaurant.find();
+    res.json(allRestaurants);
+  } catch (error) {
+    res.json({ message: error });
+  }
 });
 
 // add a restaurant
-router.post("/", verifyToken, (req, res) => {
-  jwt.verify(req.token, "secretkey", async (err, authDate) => {
-    if (err) {
-      res.sendStatus(403); //forbidden
-    } else {
-      const restaurant = new Restaurant({
-        name: req.body.name,
-        description: req.body.description,
-      });
-      try {
-        const savedRestaurant = await restaurant.save();
-        res.json(savedRestaurant);
-      } catch (error) {
-        res.json({ message: error });
-      }
-    }
+router.post("/", verifyToken, async (req, res) => {
+  const restaurant = new Restaurant({
+    name: req.body.name,
+    description: req.body.description,
   });
+  try {
+    const savedRestaurant = await restaurant.save();
+    res.json(savedRestaurant);
+  } catch (error) {
+    res.json({ message: error });
+  }
 });
 
 // get restaurant by a parameter
-router.get("/:restaurantId", verifyToken, (req, res) => {
-  jwt.verify(req.token, "secretkey", async (err, authDate) => {
-    if (err) {
-      res.sendStatus(403); //forbidden
-    } else {
-      try {
-        const foundRestaurant = await Restaurant.findById(
-          req.params.restaurantId
-        );
-        res.json(foundRestaurant);
-      } catch (error) {
-        res.json({ message: error });
-      }
-    }
-  });
+router.get("/:restaurantId", verifyToken, async (req, res) => {
+  try {
+    const foundRestaurant = await Restaurant.findById(req.params.restaurantId);
+    res.json(foundRestaurant);
+  } catch (error) {
+    res.json({ message: error });
+  }
 });
 
 // delete restaurant by id
-router.delete("/:restaurantId", verifyToken, (req, res) => {
-  jwt.verify(req.token, "secretkey", async (err, authDate) => {
-    if (err) {
-      res.sendStatus(403); //forbidden
-    } else {
-      try {
-        deletedRestaurant = await Restaurant.remove({
-          _id: req.params.restaurantId,
-        });
-        res.json(deletedRestaurant);
-      } catch (error) {
-        res.json({ message: error });
-      }
-    }
-  });
+router.delete("/:restaurantId", verifyToken, async (req, res) => {
+  try {
+    deletedRestaurant = await Restaurant.remove({
+      _id: req.params.restaurantId,
+    });
+    res.json(deletedRestaurant);
+  } catch (error) {
+    res.json({ message: error });
+  }
 });
 
 // change restaurant by id
-router.patch("/:restaurantId", verifyToken, (req, res) => {
-  jwt.verify(req.token, "secretkey", async (err, authDate) => {
-    if (err) {
-      res.sendStatus(403); //forbidden
-    } else {
-      try {
-        const changedRestaurant = await Restaurant.updateOne(
-          { _id: req.params.restaurantId },
-          { $set: { name: req.body.name } }
-        );
-        res.json(changedRestaurant);
-      } catch (error) {
-        res.json({ message: error });
-      }
-    }
-  });
+router.patch("/:restaurantId", verifyToken, async (req, res) => {
+  try {
+    const changedRestaurant = await Restaurant.updateOne(
+      { _id: req.params.restaurantId },
+      { $set: { name: req.body.name } }
+    );
+    res.json(changedRestaurant);
+  } catch (error) {
+    res.json({ message: error });
+  }
 });
 
 module.exports = router;

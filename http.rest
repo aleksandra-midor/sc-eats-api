@@ -21,17 +21,17 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuY
 }
 
 ### get restaurant by a parameter
-GET http://localhost:4000/api/v1/restaurants/5f70fc9931379731c8e9e467
+GET http://localhost:4000/api/v1/restaurants/5f731e095d28033e3c05ed21
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiVG9tIiwiZW1haWwiOiJ0b21AZ21haWwuY29tIiwicGFzc3dvcmQiOiJkZWNlbWJlciJ9LCJpYXQiOjE2MDEyNDAxNjR9.YshlcjnUgrPaMqDVP40RZ5lZ68qu68e99je666Wgy10
 
 
 ### delete restaurant by id
-DELETE http://localhost:4000/api/v1/restaurants/5f70fc9931379731c8e9e467
+DELETE http://localhost:4000/api/v1/restaurants/5f731e095d28033e3c05ed21
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiVG9tIiwiZW1haWwiOiJ0b21AZ21haWwuY29tIiwicGFzc3dvcmQiOiJkZWNlbWJlciJ9LCJpYXQiOjE2MDEyNDAxNjR9.YshlcjnUgrPaMqDVP40RZ5lZ68qu68e99je666Wgy10
 
 ### change restaurant by id
 
-PATCH http://localhost:4000/api/v1/restaurants/5f73214b15147a6a88036540
+PATCH http://localhost:4000/api/v1/restaurants/5f73214515147a6a88036538
 Content-Type: application/json
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiVG9tIiwiZW1haWwiOiJ0b21AZ21haWwuY29tIiwicGFzc3dvcmQiOiJkZWNlbWJlciJ9LCJpYXQiOjE2MDEyNDAxNjR9.YshlcjnUgrPaMqDVP40RZ5lZ68qu68e99je666Wgy10
 

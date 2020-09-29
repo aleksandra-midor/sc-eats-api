@@ -25,7 +25,7 @@ router.get("/", verifyToken, (req, res) => {
         const allRestaurants = await Restaurant.find();
         res.json(allRestaurants);
       } catch (error) {
-        res.json({ message: err });
+        res.json({ message: error });
       }
     }
   });
@@ -44,8 +44,8 @@ router.post("/", verifyToken, (req, res) => {
       try {
         const savedRestaurant = await restaurant.save();
         res.json(savedRestaurant);
-      } catch (err) {
-        res.json({ message: err });
+      } catch (error) {
+        res.json({ message: error });
       }
     }
   });
@@ -80,8 +80,8 @@ router.delete("/:restaurantId", verifyToken, (req, res) => {
           _id: req.params.restaurantId,
         });
         res.json(deletedRestaurant);
-      } catch (err) {
-        res.json({ message: err });
+      } catch (error) {
+        res.json({ message: error });
       }
     }
   });
@@ -99,8 +99,8 @@ router.patch("/:restaurantId", verifyToken, (req, res) => {
           { $set: { name: req.body.name } }
         );
         res.json(changedRestaurant);
-      } catch (err) {
-        res.json({ message: err });
+      } catch (error) {
+        res.json({ message: error });
       }
     }
   });
